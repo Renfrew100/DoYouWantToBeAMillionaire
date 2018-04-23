@@ -32,6 +32,7 @@ public class LoseScreen extends javax.swing.JFrame {
         QUIT = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pictures/gameover.png"))); // NOI18N
 

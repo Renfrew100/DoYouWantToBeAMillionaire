@@ -84,9 +84,10 @@ public class scoreScreen extends javax.swing.JFrame {
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(72, 72, 239));
-        jPanel1.setForeground(new java.awt.Color(51, 51, 255));
+        jPanel1.setForeground(new java.awt.Color(72, 72, 239));
         jPanel1.setToolTipText("");
 
         jPanel2.setBackground(new java.awt.Color(51, 153, 255));
@@ -94,7 +95,7 @@ public class scoreScreen extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(0, 16, 255));
 
-        Question5.setBackground(new java.awt.Color(204, 204, 204));
+        Question5.setBackground(new java.awt.Color(255, 229, 239));
         Question5.setForeground(new java.awt.Color(204, 204, 204));
 
         jLabel1.setFont(new java.awt.Font("Copperplate Gothic Bold", 1, 11)); // NOI18N
@@ -116,7 +117,7 @@ public class scoreScreen extends javax.swing.JFrame {
                 .addComponent(jLabel1))
         );
 
-        Question4.setBackground(new java.awt.Color(204, 204, 204));
+        Question4.setBackground(new java.awt.Color(229, 255, 229));
         Question4.setForeground(new java.awt.Color(204, 204, 204));
 
         jLabel2.setFont(new java.awt.Font("Copperplate Gothic Bold", 1, 11)); // NOI18N
@@ -138,7 +139,7 @@ public class scoreScreen extends javax.swing.JFrame {
                 .addComponent(jLabel2))
         );
 
-        Question3.setBackground(new java.awt.Color(204, 204, 204));
+        Question3.setBackground(new java.awt.Color(229, 255, 229));
         Question3.setForeground(new java.awt.Color(204, 204, 204));
 
         jLabel3.setFont(new java.awt.Font("Copperplate Gothic Bold", 1, 11)); // NOI18N
@@ -160,7 +161,7 @@ public class scoreScreen extends javax.swing.JFrame {
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        Question2.setBackground(new java.awt.Color(204, 204, 204));
+        Question2.setBackground(new java.awt.Color(229, 255, 229));
         Question2.setForeground(new java.awt.Color(204, 204, 204));
 
         jLabel4.setFont(new java.awt.Font("Copperplate Gothic Bold", 1, 11)); // NOI18N
@@ -182,7 +183,7 @@ public class scoreScreen extends javax.swing.JFrame {
                 .addComponent(jLabel4))
         );
 
-        Question1.setBackground(new java.awt.Color(204, 204, 204));
+        Question1.setBackground(new java.awt.Color(229, 255, 229));
         Question1.setForeground(new java.awt.Color(204, 204, 204));
 
         jLabel5.setFont(new java.awt.Font("Copperplate Gothic Bold", 1, 11)); // NOI18N
@@ -199,12 +200,10 @@ public class scoreScreen extends javax.swing.JFrame {
         );
         Question1Layout.setVerticalGroup(
             Question1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Question1Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel5))
+            .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        Question6.setBackground(new java.awt.Color(204, 204, 204));
+        Question6.setBackground(new java.awt.Color(255, 229, 239));
         Question6.setForeground(new java.awt.Color(204, 204, 204));
 
         jLabel6.setFont(new java.awt.Font("Copperplate Gothic Bold", 1, 11)); // NOI18N
@@ -226,7 +225,7 @@ public class scoreScreen extends javax.swing.JFrame {
                 .addComponent(jLabel6))
         );
 
-        Question7.setBackground(new java.awt.Color(204, 204, 204));
+        Question7.setBackground(new java.awt.Color(255, 229, 239));
         Question7.setForeground(new java.awt.Color(204, 204, 204));
 
         jLabel7.setFont(new java.awt.Font("Copperplate Gothic Bold", 1, 11)); // NOI18N
@@ -248,7 +247,7 @@ public class scoreScreen extends javax.swing.JFrame {
                 .addComponent(jLabel7))
         );
 
-        Question57.setBackground(new java.awt.Color(204, 204, 204));
+        Question57.setBackground(new java.awt.Color(255, 229, 239));
         Question57.setForeground(new java.awt.Color(204, 204, 204));
 
         jLabel57.setFont(new java.awt.Font("Copperplate Gothic Bold", 1, 11)); // NOI18N
@@ -270,7 +269,7 @@ public class scoreScreen extends javax.swing.JFrame {
                 .addComponent(jLabel57))
         );
 
-        Question53.setBackground(new java.awt.Color(204, 204, 204));
+        Question53.setBackground(new java.awt.Color(255, 229, 239));
         Question53.setForeground(new java.awt.Color(204, 204, 204));
 
         jLabel53.setFont(new java.awt.Font("Copperplate Gothic Bold", 1, 11)); // NOI18N
@@ -292,7 +291,7 @@ public class scoreScreen extends javax.swing.JFrame {
                 .addComponent(jLabel53))
         );
 
-        Question56.setBackground(new java.awt.Color(204, 204, 204));
+        Question56.setBackground(new java.awt.Color(255, 242, 229));
         Question56.setForeground(new java.awt.Color(204, 204, 204));
 
         jLabel56.setFont(new java.awt.Font("Copperplate Gothic Bold", 1, 11)); // NOI18N
@@ -314,7 +313,7 @@ public class scoreScreen extends javax.swing.JFrame {
                 .addComponent(jLabel56))
         );
 
-        Question51.setBackground(new java.awt.Color(204, 204, 204));
+        Question51.setBackground(new java.awt.Color(255, 242, 229));
         Question51.setForeground(new java.awt.Color(204, 204, 204));
 
         jLabel51.setFont(new java.awt.Font("Copperplate Gothic Bold", 1, 11)); // NOI18N
@@ -336,7 +335,7 @@ public class scoreScreen extends javax.swing.JFrame {
                 .addComponent(jLabel51))
         );
 
-        Question55.setBackground(new java.awt.Color(204, 204, 204));
+        Question55.setBackground(new java.awt.Color(255, 242, 229));
         Question55.setForeground(new java.awt.Color(204, 204, 204));
 
         jLabel55.setFont(new java.awt.Font("Copperplate Gothic Bold", 1, 11)); // NOI18N
@@ -358,7 +357,7 @@ public class scoreScreen extends javax.swing.JFrame {
                 .addComponent(jLabel55))
         );
 
-        Question50.setBackground(new java.awt.Color(204, 204, 204));
+        Question50.setBackground(new java.awt.Color(255, 242, 229));
         Question50.setForeground(new java.awt.Color(204, 204, 204));
 
         jLabel50.setFont(new java.awt.Font("Copperplate Gothic Bold", 1, 11)); // NOI18N
@@ -380,7 +379,7 @@ public class scoreScreen extends javax.swing.JFrame {
                 .addComponent(jLabel50))
         );
 
-        Question52.setBackground(new java.awt.Color(204, 204, 204));
+        Question52.setBackground(new java.awt.Color(255, 242, 229));
         Question52.setForeground(new java.awt.Color(204, 204, 204));
 
         jLabel52.setFont(new java.awt.Font("Copperplate Gothic Bold", 1, 11)); // NOI18N
@@ -402,7 +401,7 @@ public class scoreScreen extends javax.swing.JFrame {
                 .addComponent(jLabel52))
         );
 
-        Question54.setBackground(new java.awt.Color(204, 204, 204));
+        Question54.setBackground(new java.awt.Color(229, 255, 229));
         Question54.setForeground(new java.awt.Color(204, 204, 204));
 
         jLabel54.setFont(new java.awt.Font("Copperplate Gothic Bold", 1, 11)); // NOI18N
@@ -492,10 +491,14 @@ public class scoreScreen extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(22, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        nextBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pictures/nextBtn (3).png"))); // NOI18N
+        nextBtn.setBackground(new java.awt.Color(72, 72, 239));
+        nextBtn.setForeground(new java.awt.Color(72, 72, 239));
+        nextBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pictures/NextBtn2.png"))); // NOI18N
+        nextBtn.setBorder(null);
+        nextBtn.setBorderPainted(false);
         nextBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 nextBtnMouseEntered(evt);
@@ -525,26 +528,28 @@ public class scoreScreen extends javax.swing.JFrame {
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(76, 76, 76)
-                        .addComponent(nextBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(12, 12, 12)
+                        .addComponent(jLabel9))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel9)))
+                        .addGap(62, 62, 62)
+                        .addComponent(nextBtn)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel9)
-                .addGap(57, 57, 57)
-                .addComponent(nextBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(74, 74, 74)
                 .addComponent(jLabel8)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel9)
+                .addGap(37, 37, 37)
+                .addComponent(nextBtn)
+                .addContainerGap())
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
