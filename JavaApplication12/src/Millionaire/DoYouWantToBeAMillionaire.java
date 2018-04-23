@@ -9,6 +9,16 @@ import java.util.Random;
 
 public class DoYouWantToBeAMillionaire {
     
+    public static int questionNumber = 0;
+    
+    public static int getQuestionNumber(){
+        return questionNumber;
+    }
+    
+    public static void setQuestionNumber(){
+        questionNumber += 1;
+    }
+    
     public static void lifeLine1(int questionNumber){
         Random rand = new Random();
         ArrayList<String> incorrectAnswer = new ArrayList<String>();
