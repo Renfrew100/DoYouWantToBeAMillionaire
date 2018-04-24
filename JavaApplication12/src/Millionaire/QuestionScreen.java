@@ -33,9 +33,7 @@ public class QuestionScreen extends javax.swing.JFrame {
         
     public QuestionScreen() {
         initComponents();
-        
-        setQuestionNumber();
-        
+                       
         // sets text
         ButtonA.setText("Choice A");
         ButtonB.setText("Choice B");
@@ -372,7 +370,13 @@ public class QuestionScreen extends javax.swing.JFrame {
             ButtonA.setBackground(Color.BLACK);
         }
         else if (btnAHighlight == 2){
+            ButtonA.setBackground(Color.ORANGE);
+        }
+        else if (btnAHighlight == 3){
             ButtonA.setBackground(Color.GREEN);
+        }
+        else if (btnAHighlight == 4){
+            ButtonA.setBackground(Color.RED);
         }
         else {
             ButtonA.setBackground(myColour);
@@ -380,11 +384,17 @@ public class QuestionScreen extends javax.swing.JFrame {
     }
     
     public void setBtnBColour(Color myColour){
-        if(btnBHighlight == 1){
+        if(btnBHighlight == 1){ //if lifeline 1 removes it
             ButtonB.setBackground(Color.BLACK);
         }
-        else if (btnBHighlight == 2){
+        else if (btnBHighlight == 2){ //if lifeline 2 selects it
+            ButtonB.setBackground(Color.ORANGE);
+        }
+        else if (btnBHighlight == 3){ //if after clicking, answer is correct
             ButtonB.setBackground(Color.GREEN);
+        }
+        else if (btnBHighlight == 4){ //if after clicking, answer is incorrect
+            ButtonB.setBackground(Color.RED);
         }
         else {
             ButtonB.setBackground(myColour);
@@ -396,7 +406,13 @@ public class QuestionScreen extends javax.swing.JFrame {
             ButtonC.setBackground(Color.BLACK);
         }
         else if (btnCHighlight == 2){
+            ButtonC.setBackground(Color.ORANGE);
+        }
+        else if (btnCHighlight == 3){
             ButtonC.setBackground(Color.GREEN);
+        }
+        else if (btnCHighlight == 4){
+            ButtonC.setBackground(Color.RED);
         }
         else {
             ButtonC.setBackground(myColour);
@@ -408,7 +424,13 @@ public class QuestionScreen extends javax.swing.JFrame {
             ButtonD.setBackground(Color.BLACK);
         }
         else if (btnDHighlight == 2){
+            ButtonD.setBackground(Color.ORANGE);
+        }
+        else if (btnDHighlight == 3){
             ButtonD.setBackground(Color.GREEN);
+        }
+        else if (btnDHighlight == 4){
+            ButtonD.setBackground(Color.RED);
         }
         else {
             ButtonD.setBackground(myColour);

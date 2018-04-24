@@ -1,5 +1,7 @@
 package Millionaire;
 
+import static Millionaire.DoYouWantToBeAMillionaire.getQuestionNumber;
+import static Millionaire.DoYouWantToBeAMillionaire.setQuestionNumber;
 import java.awt.Color;
 import javax.swing.BorderFactory;
 
@@ -20,6 +22,39 @@ public class scoreScreen extends javax.swing.JFrame {
      */
     public scoreScreen() {
         initComponents();
+        setQuestionNumber();
+        System.out.println(getQuestionNumber());
+        Color easyColor = new Color(0, 255, 0);
+        Color mediumColor = new Color(255,127, 0);
+        Color hardColor = new Color(255,0, 95);
+        
+        
+        if(getQuestionNumber() == 1){
+            Question1.setBackground(easyColor);
+        }
+        else if(getQuestionNumber() == 1){
+            Question1.setBackground(easyColor);
+            Question2.setBackground(easyColor);
+        }
+        else if(getQuestionNumber() == 3){
+            Question1.setBackground(easyColor);
+            Question2.setBackground(easyColor);
+            Question3.setBackground(easyColor);
+        }
+        else if(getQuestionNumber() == 4){
+            Question1.setBackground(easyColor);
+            Question2.setBackground(easyColor);
+            Question3.setBackground(easyColor);
+            Question4.setBackground(easyColor);
+            
+        }else if(getQuestionNumber() == 5){
+            Question1.setBackground(easyColor);
+            Question2.setBackground(easyColor);
+            Question3.setBackground(easyColor);
+            Question5.setBackground(easyColor);
+        }
+        
+        
     }
 
     /**
@@ -95,7 +130,7 @@ public class scoreScreen extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(0, 16, 255));
 
-        Question5.setBackground(new java.awt.Color(255, 229, 239));
+        Question5.setBackground(new java.awt.Color(255, 204, 223));
         Question5.setForeground(new java.awt.Color(204, 204, 204));
 
         jLabel1.setFont(new java.awt.Font("Copperplate Gothic Bold", 1, 11)); // NOI18N
@@ -203,7 +238,7 @@ public class scoreScreen extends javax.swing.JFrame {
             .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        Question6.setBackground(new java.awt.Color(255, 229, 239));
+        Question6.setBackground(new java.awt.Color(255, 204, 223));
         Question6.setForeground(new java.awt.Color(204, 204, 204));
 
         jLabel6.setFont(new java.awt.Font("Copperplate Gothic Bold", 1, 11)); // NOI18N
@@ -225,7 +260,7 @@ public class scoreScreen extends javax.swing.JFrame {
                 .addComponent(jLabel6))
         );
 
-        Question7.setBackground(new java.awt.Color(255, 229, 239));
+        Question7.setBackground(new java.awt.Color(255, 204, 223));
         Question7.setForeground(new java.awt.Color(204, 204, 204));
 
         jLabel7.setFont(new java.awt.Font("Copperplate Gothic Bold", 1, 11)); // NOI18N
@@ -247,7 +282,7 @@ public class scoreScreen extends javax.swing.JFrame {
                 .addComponent(jLabel7))
         );
 
-        Question57.setBackground(new java.awt.Color(255, 229, 239));
+        Question57.setBackground(new java.awt.Color(255, 204, 223));
         Question57.setForeground(new java.awt.Color(204, 204, 204));
 
         jLabel57.setFont(new java.awt.Font("Copperplate Gothic Bold", 1, 11)); // NOI18N
@@ -269,7 +304,7 @@ public class scoreScreen extends javax.swing.JFrame {
                 .addComponent(jLabel57))
         );
 
-        Question53.setBackground(new java.awt.Color(255, 229, 239));
+        Question53.setBackground(new java.awt.Color(255, 204, 223));
         Question53.setForeground(new java.awt.Color(204, 204, 204));
 
         jLabel53.setFont(new java.awt.Font("Copperplate Gothic Bold", 1, 11)); // NOI18N
