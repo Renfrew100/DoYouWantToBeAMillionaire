@@ -13,7 +13,12 @@ public class DoYouWantToBeAMillionaire {
     public static int questionNumber = 0;
     public static boolean lifeline1Used = false;
     public static boolean lifeline2Used = false;
+    public static int question;
     
+    public static int getQuestion (){
+        return question;
+    }
+       
     public static boolean getlifeline1Used(){
         return lifeline1Used;
     }
@@ -141,6 +146,7 @@ public class DoYouWantToBeAMillionaire {
                 }              
             }
         }
+        
         catch(FileNotFoundException ex){
             System.out.println("Cannot find file "+ fName + " .");
         }

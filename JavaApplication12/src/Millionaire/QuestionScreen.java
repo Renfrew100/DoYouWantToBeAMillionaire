@@ -5,10 +5,12 @@
  */
 package Millionaire;
 
+import static Millionaire.DoYouWantToBeAMillionaire.getQuestion;
 import static Millionaire.DoYouWantToBeAMillionaire.getQuestionNumber;
 import static Millionaire.DoYouWantToBeAMillionaire.getlifeline1Used;
 import static Millionaire.DoYouWantToBeAMillionaire.getlifeline2Used;
 import static Millionaire.DoYouWantToBeAMillionaire.lifeLine;
+import static Millionaire.DoYouWantToBeAMillionaire.loadQuestions;
 import static Millionaire.DoYouWantToBeAMillionaire.setQuestionNumber;
 import static Millionaire.DoYouWantToBeAMillionaire.setlifeline1Used;
 import static Millionaire.DoYouWantToBeAMillionaire.setlifeline2Used;
@@ -56,6 +58,42 @@ public class QuestionScreen extends javax.swing.JFrame {
         
     }
 
+    public void verifyAnswer(String btnID){
+        
+        Color myColour = new Color(0, 0, 0);
+
+        if (loadQuestions().get(getQuestion()).get(5).equals(btnID)) {
+            if (btnID.equals("A")) {
+                btnAHighlight = 3;
+                setBtnAColour(myColour);
+            } else if (btnID.equals("B")) {
+                btnBHighlight = 3;
+                setBtnBColour(myColour);
+            } else if (btnID.equals("C")) {
+                btnCHighlight = 3;
+                setBtnCColour(myColour);
+            } else {
+                btnDHighlight = 3;
+                setBtnDColour(myColour);
+            }
+        }
+        else{
+        if (btnID.equals("A")) {
+                btnAHighlight = 4;
+                setBtnAColour(myColour);
+            } else if (btnID.equals("B")) {
+                btnBHighlight = 4;
+                setBtnBColour(myColour);
+            } else if (btnID.equals("C")) {
+                btnCHighlight = 4;
+                setBtnCColour(myColour);
+            } else {
+                btnDHighlight = 4;
+                setBtnDColour(myColour);
+            }
+        }
+    }
+
         
     /**
      * This method is called from within the constructor to initialize the form.
@@ -77,6 +115,7 @@ public class QuestionScreen extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -226,6 +265,15 @@ public class QuestionScreen extends javax.swing.JFrame {
         jPanel2.add(jLabel4);
         jLabel4.setBounds(330, 10, 250, 250);
 
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pictures/NextBtn2.png"))); // NOI18N
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jButton1);
+        jButton1.setBounds(860, 560, 50, 50);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -241,19 +289,39 @@ public class QuestionScreen extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void ButtonCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonCActionPerformed
-        // TODO add your handling code here:
+        if (btnCHighlight != 1 && btnCHighlight != 2) {
+            verifyAnswer("C");
+        }
+        else if (btnCHighlight == 2){
+            verifyAnswer("C");
+        }
     }//GEN-LAST:event_ButtonCActionPerformed
 
     private void ButtonDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonDActionPerformed
-        // TODO add your handling code here:
+        if((btnDHighlight != 1) && btnDHighlight != 2){
+            verifyAnswer("D");
+        } 
+        else if (btnDHighlight == 2){
+            verifyAnswer("D");
+        }
     }//GEN-LAST:event_ButtonDActionPerformed
 
     private void ButtonAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonAActionPerformed
-        // TODO add your handling code here:
+        if(btnAHighlight != 1 && btnAHighlight != 2){
+            verifyAnswer("A");
+        } 
+        else if (btnAHighlight == 2){
+            verifyAnswer("A");
+        }
     }//GEN-LAST:event_ButtonAActionPerformed
 
     private void ButtonBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonBActionPerformed
-        // TODO add your handling code here:
+        if(btnBHighlight != 1 && btnBHighlight != 2){
+            verifyAnswer("B");
+        }
+            else if (btnBHighlight == 2){
+            verifyAnswer("B");
+        }
     }//GEN-LAST:event_ButtonBActionPerformed
 
     private void Lifeline1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Lifeline1ActionPerformed
@@ -364,6 +432,15 @@ public class QuestionScreen extends javax.swing.JFrame {
         Color Lifeline2MouseExited = new Color(78,73,231);
         setLifeline2Colour(Lifeline2MouseExited);
     }//GEN-LAST:event_Lifeline2MouseExited
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    
+    /* if (loadQuestions().get(getQuestion()).get(5).equals(btnID)) {
+        scoreScreen score = new scoreScreen();
+        score.setVisible(true); 
+    }*/
+   
+    }//GEN-LAST:event_jButton1ActionPerformed
     
     public void setBtnAColour(Color myColour){
         if(btnAHighlight == 1){
@@ -500,6 +577,7 @@ public class QuestionScreen extends javax.swing.JFrame {
     private javax.swing.JButton ButtonD;
     private javax.swing.JButton Lifeline1;
     private javax.swing.JButton Lifeline2;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
