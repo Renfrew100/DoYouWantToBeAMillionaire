@@ -32,12 +32,10 @@ public class QuestionScreen extends javax.swing.JFrame {
     public static int btnBHighlight = 0;
     public static int btnCHighlight = 0;
     public static int btnDHighlight = 0;
-    public static boolean btnClicked;
         
     public QuestionScreen() {
         initComponents();
-        btnClicked = false;  
-        
+                       
         // sets text
         ButtonA.setText("Choice A");
         ButtonB.setText("Choice B");
@@ -117,7 +115,7 @@ public class QuestionScreen extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        nextBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -267,14 +265,26 @@ public class QuestionScreen extends javax.swing.JFrame {
         jPanel2.add(jLabel4);
         jLabel4.setBounds(330, 10, 250, 250);
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pictures/NextBtn2.png"))); // NOI18N
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+        nextBtn.setBackground(new java.awt.Color(51, 204, 255));
+        nextBtn.setForeground(new java.awt.Color(51, 204, 255));
+        nextBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pictures/NextBtn2.png"))); // NOI18N
+        nextBtn.setBorder(null);
+        nextBtn.setBorderPainted(false);
+        nextBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                nextBtnMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                nextBtnMouseExited(evt);
             }
         });
-        jPanel2.add(jButton1);
-        jButton1.setBounds(860, 560, 50, 50);
+        nextBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nextBtnActionPerformed(evt);
+            }
+        });
+        jPanel2.add(nextBtn);
+        nextBtn.setBounds(850, 560, 49, 49);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -291,101 +301,87 @@ public class QuestionScreen extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void ButtonCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonCActionPerformed
-        if (btnCHighlight != 1 && btnCHighlight != 2 && !btnClicked) {
+        if (btnCHighlight != 1 && btnCHighlight != 2) {
             verifyAnswer("C");
-            btnClicked = true;
         }
-        else if (btnCHighlight == 2 && !btnClicked){
+        else if (btnCHighlight == 2){
             verifyAnswer("C");
-            btnClicked = true;            
         }
     }//GEN-LAST:event_ButtonCActionPerformed
 
     private void ButtonDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonDActionPerformed
-        if((btnDHighlight != 1) && btnDHighlight != 2 && !btnClicked){
+        if((btnDHighlight != 1) && btnDHighlight != 2){
             verifyAnswer("D");
-            btnClicked = true;
         } 
-        else if (btnDHighlight == 2 && !btnClicked){
+        else if (btnDHighlight == 2){
             verifyAnswer("D");
-            btnClicked = true;
         }
     }//GEN-LAST:event_ButtonDActionPerformed
 
     private void ButtonAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonAActionPerformed
-        if(btnAHighlight != 1 && btnAHighlight != 2 && !btnClicked){
+        if(btnAHighlight != 1 && btnAHighlight != 2){
             verifyAnswer("A");
-            btnClicked = true;
         } 
-        else if (btnAHighlight == 2 && !btnClicked){
+        else if (btnAHighlight == 2){
             verifyAnswer("A");
-            btnClicked = true;
         }
     }//GEN-LAST:event_ButtonAActionPerformed
 
     private void ButtonBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonBActionPerformed
-        if(btnBHighlight != 1 && btnBHighlight != 2 && !btnClicked){
+        if(btnBHighlight != 1 && btnBHighlight != 2){
             verifyAnswer("B");
-            btnClicked = true;
         }
-            else if (btnBHighlight == 2 && !btnClicked){
+            else if (btnBHighlight == 2){
             verifyAnswer("B");
-            btnClicked = true;
         }
     }//GEN-LAST:event_ButtonBActionPerformed
 
     private void Lifeline1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Lifeline1ActionPerformed
        
-        if(!btnClicked){
-            if (getlifeline1Used()){
-                JOptionPane.showMessageDialog(null, "You already used this!");
-            }
-            else{
-
-                lifeLine(getQuestionNumber(), 1);     
-
-                Color ButtonMouseExited= new Color(78,73,231); //this line will only have an affect if the button was not chosen to be highlighted
-
-
-                setBtnAColour(ButtonMouseExited);
-                setBtnBColour(ButtonMouseExited);
-                setBtnCColour(ButtonMouseExited);
-                setBtnDColour(ButtonMouseExited);            
-
-                setlifeline1Used();
-
-
-            }
+        if (getlifeline1Used()){
+            JOptionPane.showMessageDialog(null, "You already used this!");
         }
-        
+        else{
+            
+            lifeLine(getQuestionNumber(), 1);     
+             
+            Color ButtonMouseExited= new Color(78,73,231); //this line will only have an affect if the button was not chosen to be highlighted
+
+            
+            setBtnAColour(ButtonMouseExited);
+            setBtnBColour(ButtonMouseExited);
+            setBtnCColour(ButtonMouseExited);
+            setBtnDColour(ButtonMouseExited);            
+            
+            setlifeline1Used();
+            
+            
+        }
         
         
     }//GEN-LAST:event_Lifeline1ActionPerformed
 
     private void Lifeline2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Lifeline2ActionPerformed
-        if(!btnClicked){
-            if (getlifeline2Used()){
-                JOptionPane.showMessageDialog(null, "You already used this!");
-            }
-            else{
-
-                lifeLine(getQuestionNumber(), 2);     
-
-                Color ButtonMouseExited= new Color(78,73,231); //this line will only have an affect if the button was not chosen to be highlighted
-
-
-                setBtnAColour(ButtonMouseExited);
-                setBtnBColour(ButtonMouseExited);
-                setBtnCColour(ButtonMouseExited);
-                setBtnDColour(ButtonMouseExited);            
-
-                setlifeline2Used();          
-
-
-
-            }
+        if (getlifeline2Used()){
+            JOptionPane.showMessageDialog(null, "You already used this!");
         }
-        
+        else{
+            
+            lifeLine(getQuestionNumber(), 2);     
+            
+            Color ButtonMouseExited= new Color(78,73,231); //this line will only have an affect if the button was not chosen to be highlighted
+
+            
+            setBtnAColour(ButtonMouseExited);
+            setBtnBColour(ButtonMouseExited);
+            setBtnCColour(ButtonMouseExited);
+            setBtnDColour(ButtonMouseExited);            
+            
+            setlifeline2Used();          
+
+
+            
+        }
     }//GEN-LAST:event_Lifeline2ActionPerformed
 
     private void ButtonAMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonAMouseEntered
@@ -449,127 +445,110 @@ public class QuestionScreen extends javax.swing.JFrame {
         setLifeline2Colour(Lifeline2MouseExited);
     }//GEN-LAST:event_Lifeline2MouseExited
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-    
-    /* if (loadQuestions().get(getQuestion()).get(5).equals(btnID)) {
+    private void nextBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nextBtnMouseEntered
+        nextBtn.setBackground(Color.GREEN);
+        nextBtn.setForeground(Color.GREEN);
+    }//GEN-LAST:event_nextBtnMouseEntered
+
+    private void nextBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nextBtnMouseExited
+        Color blueColour = new Color(51,204,255);
+        nextBtn.setBackground(blueColour);
+        nextBtn.setForeground(blueColour);
+    }//GEN-LAST:event_nextBtnMouseExited
+
+    private void nextBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextBtnActionPerformed
+        super.dispose();
         scoreScreen score = new scoreScreen();
-        score.setVisible(true); 
-    }*/
-   
-    }//GEN-LAST:event_jButton1ActionPerformed
+        score.setVisible(true);
+    }//GEN-LAST:event_nextBtnActionPerformed
     
     public void setBtnAColour(Color myColour){
-        
-        if(!btnClicked){
-            if(btnAHighlight == 1){
-                ButtonA.setBackground(Color.BLACK);
-            }
-            else if (btnAHighlight == 2){
-                ButtonA.setBackground(Color.ORANGE);
-            }
-            else if (btnAHighlight == 3){
-                ButtonA.setBackground(Color.GREEN);
-            }
-            else if (btnAHighlight == 4){
-                ButtonA.setBackground(Color.RED);
-            }
-            else {
-                ButtonA.setBackground(myColour);
-            }
+        if(btnAHighlight == 1){
+            ButtonA.setBackground(Color.BLACK);
         }
-
+        else if (btnAHighlight == 2){
+            ButtonA.setBackground(Color.ORANGE);
+        }
+        else if (btnAHighlight == 3){
+            ButtonA.setBackground(Color.GREEN);
+        }
+        else if (btnAHighlight == 4){
+            ButtonA.setBackground(Color.RED);
+        }
+        else {
+            ButtonA.setBackground(myColour);
+        }
     }
     
     public void setBtnBColour(Color myColour){
-        
-        if(!btnClicked){
-            if(btnBHighlight == 1){ //if lifeline 1 removes it
-                ButtonB.setBackground(Color.BLACK);
-            }
-            else if (btnBHighlight == 2){ //if lifeline 2 selects it
-                ButtonB.setBackground(Color.ORANGE);
-            }
-            else if (btnBHighlight == 3){ //if after clicking, answer is correct
-                ButtonB.setBackground(Color.GREEN);
-            }
-            else if (btnBHighlight == 4){ //if after clicking, answer is incorrect
-                ButtonB.setBackground(Color.RED);
-            }
-            else {
-                ButtonB.setBackground(myColour);
-            }
+        if(btnBHighlight == 1){ //if lifeline 1 removes it
+            ButtonB.setBackground(Color.BLACK);
         }
-        
-        
+        else if (btnBHighlight == 2){ //if lifeline 2 selects it
+            ButtonB.setBackground(Color.ORANGE);
+        }
+        else if (btnBHighlight == 3){ //if after clicking, answer is correct
+            ButtonB.setBackground(Color.GREEN);
+        }
+        else if (btnBHighlight == 4){ //if after clicking, answer is incorrect
+            ButtonB.setBackground(Color.RED);
+        }
+        else {
+            ButtonB.setBackground(myColour);
+        }
     }
     
     public void setBtnCColour(Color myColour){
-        
-        if(!btnClicked){
-            if(btnCHighlight == 1){
-                ButtonC.setBackground(Color.BLACK);
-            }
-            else if (btnCHighlight == 2){
-                ButtonC.setBackground(Color.ORANGE);
-            }
-            else if (btnCHighlight == 3){
-                ButtonC.setBackground(Color.GREEN);
-            }
-            else if (btnCHighlight == 4){
-                ButtonC.setBackground(Color.RED);
-            }
-            else {
-                ButtonC.setBackground(myColour);
-            }
+        if(btnCHighlight == 1){
+            ButtonC.setBackground(Color.BLACK);
         }
-        
-        
+        else if (btnCHighlight == 2){
+            ButtonC.setBackground(Color.ORANGE);
+        }
+        else if (btnCHighlight == 3){
+            ButtonC.setBackground(Color.GREEN);
+        }
+        else if (btnCHighlight == 4){
+            ButtonC.setBackground(Color.RED);
+        }
+        else {
+            ButtonC.setBackground(myColour);
+        }
     }
     
     public void setBtnDColour(Color myColour){
-        if(!btnClicked){
-            if(btnDHighlight == 1){
-                ButtonD.setBackground(Color.BLACK);
-            }
-            else if (btnDHighlight == 2){
-                ButtonD.setBackground(Color.ORANGE);
-            }
-            else if (btnDHighlight == 3){
-                ButtonD.setBackground(Color.GREEN);
-            }
-            else if (btnDHighlight == 4){
-                ButtonD.setBackground(Color.RED);
-            }
-            else {
-                ButtonD.setBackground(myColour);
-            }
+        if(btnDHighlight == 1){
+            ButtonD.setBackground(Color.BLACK);
         }
-        
-        
+        else if (btnDHighlight == 2){
+            ButtonD.setBackground(Color.ORANGE);
+        }
+        else if (btnDHighlight == 3){
+            ButtonD.setBackground(Color.GREEN);
+        }
+        else if (btnDHighlight == 4){
+            ButtonD.setBackground(Color.RED);
+        }
+        else {
+            ButtonD.setBackground(myColour);
+        }
     }
     
     public void setLifeline2Colour(Color myColour){
-        
-        if(!btnClicked){      
-            if (getlifeline2Used()){
-                Lifeline2.setBackground(Color.BLACK);
-            }
-            else{
-                Lifeline2.setBackground(myColour);
-            }
+        if (getlifeline2Used()){
+            Lifeline2.setBackground(Color.BLACK);
         }
-
+        else{
+            Lifeline2.setBackground(myColour);
+        }
     }
     
     public void setLifeline1Colour(Color myColour){
-        
-        if(!btnClicked){
-            if (getlifeline1Used()){
-                Lifeline1.setBackground(Color.BLACK);
-            }
-            else{
-                Lifeline1.setBackground(myColour);
-            }
+        if (getlifeline1Used()){
+            Lifeline1.setBackground(Color.BLACK);
+        }
+        else{
+            Lifeline1.setBackground(myColour);
         }
     }
     
@@ -618,11 +597,11 @@ public class QuestionScreen extends javax.swing.JFrame {
     private javax.swing.JButton ButtonD;
     private javax.swing.JButton Lifeline1;
     private javax.swing.JButton Lifeline2;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JButton nextBtn;
     // End of variables declaration//GEN-END:variables
 }
