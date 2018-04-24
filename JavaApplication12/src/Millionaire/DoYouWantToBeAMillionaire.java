@@ -1,4 +1,5 @@
 package Millionaire;
+import java.awt.Color;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -10,6 +11,24 @@ import java.util.Random;
 public class DoYouWantToBeAMillionaire {
     
     public static int questionNumber = 0;
+    public static boolean lifeline1Used = false;
+    public static boolean lifeline2Used = false;
+    
+    public static boolean getlifeline1Used(){
+        return lifeline1Used;
+    }
+    
+    public static void setlifeline1Used(){
+        lifeline1Used = true;
+    }
+    
+    public static boolean getlifeline2Used(){
+        return lifeline2Used;
+    }
+    
+    public static void setlifeline2Used(){
+        lifeline2Used = true;
+    }
     
     public static int getQuestionNumber(){
         return questionNumber;
@@ -19,7 +38,27 @@ public class DoYouWantToBeAMillionaire {
         questionNumber += 1;
     }
     
-    public static void lifeLine1(int questionNumber){
+    public static void test(){
+        QuestionScreen.btnDHighlight = 2;
+    }
+    
+    public static void highlightIncorrectButton(int randNum, ArrayList<String> incorrectAnswer, int lifelineType){
+        
+        if (incorrectAnswer.get(randNum) == "A"){
+            QuestionScreen.btnAHighlight=lifelineType; //0 would be no highlight, 1 would be black, 2 would be green
+        }
+        else if (incorrectAnswer.get(randNum) == "B"){
+            QuestionScreen.btnBHighlight = lifelineType;
+        }
+        else if (incorrectAnswer.get(randNum) == "C"){
+            QuestionScreen.btnCHighlight = lifelineType;
+        }
+        else{
+            QuestionScreen.btnDHighlight = lifelineType;
+        }
+    }
+    
+    public static void lifeLine(int questionNumber, int lifelineType){
         Random rand = new Random();
         ArrayList<String> incorrectAnswer = new ArrayList<String>();
         switch(loadQuestions().get(questionNumber - 1).get(5)){
@@ -39,11 +78,43 @@ public class DoYouWantToBeAMillionaire {
                 incorrectAnswer.add("A");
                 incorrectAnswer.add("B");
                 incorrectAnswer.add("C");
-        for (int i = 0; i < 2; i++){
-            int  randNum = rand.nextInt(2) + 0;
+        }
+        
+        if(lifelineType == 1){
+            int  randNum1 = rand.nextInt(3);
+            int randNum2 = rand.nextInt(3);
+            while (randNum2 == randNum1){
+                randNum2 = rand.nextInt(3);     
+            }
+            highlightIncorrectButton(randNum1, incorrectAnswer, 1);
+            highlightIncorrectButton(randNum2, incorrectAnswer, 1);
+        }
+        else{
+            int randNum3 = rand.nextInt(2);
+            System.out.println("The number is: " + randNum3);
             
-        }    
-            
+            if (randNum3 == 0){ //give user correct answer
+                String answer = loadQuestions().get(questionNumber - 1).get(5);
+                
+                if(answer.equals("A")){
+                   QuestionScreen.btnAHighlight = 2; 
+                }
+                else if (answer.equals("B")){
+                    QuestionScreen.btnBHighlight = 2;
+                }
+                else if (answer.equals("C")){
+                    QuestionScreen.btnCHighlight = 2;
+                }
+                else if (answer.equals("D")){
+                    QuestionScreen.btnDHighlight = 2;
+                }
+
+            }
+            else{
+                int  randNum4 = rand.nextInt(3);
+                highlightIncorrectButton(randNum4, incorrectAnswer, 2);
+            }
+        
         }
     }
     
@@ -76,6 +147,7 @@ public class DoYouWantToBeAMillionaire {
         catch(IOException ex){
             System.out.println("Unable to open file '" + fName + "'");
         }
+
         return(questionsMain);
     }
     
@@ -86,5 +158,6 @@ public class DoYouWantToBeAMillionaire {
         ChallengeScreen challenge = new ChallengeScreen ();
         WinScreen win = new WinScreen();
         LoseScreen lose = new LoseScreen();
+        loadQuestions();
     }
 }

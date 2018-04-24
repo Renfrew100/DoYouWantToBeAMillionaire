@@ -5,7 +5,20 @@
  */
 package Millionaire;
 
+import static Millionaire.DoYouWantToBeAMillionaire.getQuestionNumber;
+import static Millionaire.DoYouWantToBeAMillionaire.getlifeline1Used;
+import static Millionaire.DoYouWantToBeAMillionaire.getlifeline2Used;
+import static Millionaire.DoYouWantToBeAMillionaire.lifeLine;
+import static Millionaire.DoYouWantToBeAMillionaire.setQuestionNumber;
+import static Millionaire.DoYouWantToBeAMillionaire.setlifeline1Used;
+import static Millionaire.DoYouWantToBeAMillionaire.setlifeline2Used;
+import static Millionaire.DoYouWantToBeAMillionaire.test;
+
+
+
 import java.awt.Color;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -13,13 +26,17 @@ import java.awt.Color;
  */
 public class QuestionScreen extends javax.swing.JFrame {
 
-    /**
-     * Creates new form mainScreen
-     */
+    public static int btnAHighlight = 0;
+    public static int btnBHighlight = 0;
+    public static int btnCHighlight = 0;
+    public static int btnDHighlight = 0;
+        
     public QuestionScreen() {
         initComponents();
+        
+        setQuestionNumber();
+        
         // sets text
-
         ButtonA.setText("Choice A");
         ButtonB.setText("Choice B");
         ButtonC.setText("Choice C");
@@ -30,8 +47,18 @@ public class QuestionScreen extends javax.swing.JFrame {
         ButtonC.setForeground(Color.black);
         ButtonD.setForeground(Color.black);
         
+        Color ButtonMouseExited= new Color(78,73,231); //to reset the button highlight incase lifeline was previosuly used
+            
+        setBtnAColour(ButtonMouseExited);
+        setBtnBColour(ButtonMouseExited);
+        setBtnCColour(ButtonMouseExited);
+        setBtnDColour(ButtonMouseExited); 
+        setLifeline2Colour(ButtonMouseExited);
+        setLifeline1Colour(ButtonMouseExited);
+        
     }
 
+        
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -232,67 +259,181 @@ public class QuestionScreen extends javax.swing.JFrame {
     }//GEN-LAST:event_ButtonBActionPerformed
 
     private void Lifeline1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Lifeline1ActionPerformed
-        // TODO add your handling code here:
+       
+        if (getlifeline1Used()){
+            JOptionPane.showMessageDialog(null, "You already used this!");
+        }
+        else{
+            
+            lifeLine(getQuestionNumber(), 1);     
+             
+            Color ButtonMouseExited= new Color(78,73,231); //this line will only have an affect if the button was not chosen to be highlighted
+
+            
+            setBtnAColour(ButtonMouseExited);
+            setBtnBColour(ButtonMouseExited);
+            setBtnCColour(ButtonMouseExited);
+            setBtnDColour(ButtonMouseExited);            
+            
+            setlifeline1Used();
+            
+            
+        }
+        
+        
     }//GEN-LAST:event_Lifeline1ActionPerformed
 
     private void Lifeline2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Lifeline2ActionPerformed
-        // TODO add your handling code here:
+        if (getlifeline2Used()){
+            JOptionPane.showMessageDialog(null, "You already used this!");
+        }
+        else{
+            
+            lifeLine(getQuestionNumber(), 2);     
+            
+            Color ButtonMouseExited= new Color(78,73,231); //this line will only have an affect if the button was not chosen to be highlighted
+
+            
+            setBtnAColour(ButtonMouseExited);
+            setBtnBColour(ButtonMouseExited);
+            setBtnCColour(ButtonMouseExited);
+            setBtnDColour(ButtonMouseExited);            
+            
+            setlifeline2Used();          
+
+
+            
+        }
     }//GEN-LAST:event_Lifeline2ActionPerformed
 
     private void ButtonAMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonAMouseEntered
-        ButtonA.setBackground(Color.GREEN);
+        Color ButtonAMouseEntered = new Color(255, 255, 255);
+        setBtnAColour(ButtonAMouseEntered);
     }//GEN-LAST:event_ButtonAMouseEntered
 
     private void ButtonAMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonAMouseExited
-        Color myColour = new Color(78,73,231);
-        ButtonA.setBackground(myColour);
+        Color ButtonAMouseExited = new Color(78,73,231);
+        setBtnAColour(ButtonAMouseExited);
     }//GEN-LAST:event_ButtonAMouseExited
 
     private void ButtonBMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonBMouseEntered
-        ButtonB.setBackground(Color.GREEN);
+        Color ButtonBMouseEntered = new Color(255, 255, 255);
+        setBtnBColour(ButtonBMouseEntered);
     }//GEN-LAST:event_ButtonBMouseEntered
 
     private void ButtonBMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonBMouseExited
-        Color myColour = new Color(78,73,231);
-        ButtonB.setBackground(myColour);
+        Color ButtonBMouseExited = new Color(78,73,231);
+        setBtnBColour(ButtonBMouseExited);
     }//GEN-LAST:event_ButtonBMouseExited
 
     private void ButtonCMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonCMouseEntered
-        ButtonC.setBackground(Color.GREEN);
+        Color ButtonCMouseEntered = new Color(255, 255, 255);
+        setBtnCColour(ButtonCMouseEntered);
     }//GEN-LAST:event_ButtonCMouseEntered
 
     private void ButtonCMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonCMouseExited
-        Color myColour = new Color(78,73,231);
-        ButtonC.setBackground(myColour);
+        Color ButtonCMouseExited = new Color(78,73,231);
+        setBtnCColour(ButtonCMouseExited);
     }//GEN-LAST:event_ButtonCMouseExited
 
     private void ButtonDMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonDMouseEntered
-        ButtonD.setBackground(Color.GREEN);
+        Color ButtonDMouseEntered = new Color(255, 255, 255);
+        setBtnDColour(ButtonDMouseEntered);
     }//GEN-LAST:event_ButtonDMouseEntered
 
     private void ButtonDMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonDMouseExited
-        Color myColour = new Color(78,73,231);
-        ButtonD.setBackground(myColour);
+        Color ButtonDMouseExited = new Color(78,73,231);
+        setBtnDColour(ButtonDMouseExited);
     }//GEN-LAST:event_ButtonDMouseExited
 
     private void Lifeline1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Lifeline1MouseEntered
-        Lifeline1.setBackground(Color.BLUE);
+        Color Lifeline1MouseEntered = new Color(153, 255, 255);
+        setLifeline1Colour(Lifeline1MouseEntered);
+          
     }//GEN-LAST:event_Lifeline1MouseEntered
 
     private void Lifeline1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Lifeline1MouseExited
-        Color myColour = new Color(78,73,231);
-        Lifeline1.setBackground(myColour);
+        Color Lifeline1MouseExited = new Color(78,73,231);
+        setLifeline1Colour(Lifeline1MouseExited);
     }//GEN-LAST:event_Lifeline1MouseExited
 
     private void Lifeline2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Lifeline2MouseEntered
-        Lifeline2.setBackground(Color.BLUE);
+        Color Lifeline2MouseEntered = new Color(153, 255, 255);
+        setLifeline2Colour(Lifeline2MouseEntered);
     }//GEN-LAST:event_Lifeline2MouseEntered
 
     private void Lifeline2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Lifeline2MouseExited
-        Color myColour = new Color(78,73,231);
-        Lifeline2.setBackground(myColour);
+        Color Lifeline2MouseExited = new Color(78,73,231);
+        setLifeline2Colour(Lifeline2MouseExited);
     }//GEN-LAST:event_Lifeline2MouseExited
-
+    
+    public void setBtnAColour(Color myColour){
+        if(btnAHighlight == 1){
+            ButtonA.setBackground(Color.BLACK);
+        }
+        else if (btnAHighlight == 2){
+            ButtonA.setBackground(Color.GREEN);
+        }
+        else {
+            ButtonA.setBackground(myColour);
+        }
+    }
+    
+    public void setBtnBColour(Color myColour){
+        if(btnBHighlight == 1){
+            ButtonB.setBackground(Color.BLACK);
+        }
+        else if (btnBHighlight == 2){
+            ButtonB.setBackground(Color.GREEN);
+        }
+        else {
+            ButtonB.setBackground(myColour);
+        }
+    }
+    
+    public void setBtnCColour(Color myColour){
+        if(btnCHighlight == 1){
+            ButtonC.setBackground(Color.BLACK);
+        }
+        else if (btnCHighlight == 2){
+            ButtonC.setBackground(Color.GREEN);
+        }
+        else {
+            ButtonC.setBackground(myColour);
+        }
+    }
+    
+    public void setBtnDColour(Color myColour){
+        if(btnDHighlight == 1){
+            ButtonD.setBackground(Color.BLACK);
+        }
+        else if (btnDHighlight == 2){
+            ButtonD.setBackground(Color.GREEN);
+        }
+        else {
+            ButtonD.setBackground(myColour);
+        }
+    }
+    
+    public void setLifeline2Colour(Color myColour){
+        if (getlifeline2Used()){
+            Lifeline2.setBackground(Color.BLACK);
+        }
+        else{
+            Lifeline2.setBackground(myColour);
+        }
+    }
+    
+    public void setLifeline1Colour(Color myColour){
+        if (getlifeline1Used()){
+            Lifeline1.setBackground(Color.BLACK);
+        }
+        else{
+            Lifeline1.setBackground(myColour);
+        }
+    }
+    
+    
     /**
      * @param args the command line arguments
      */
